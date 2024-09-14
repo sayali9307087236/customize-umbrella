@@ -1,0 +1,40 @@
+.umbrella-preview {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .umbrella-image {
+    width: 300px;
+    height: auto;
+    
+  }
+  
+  .logo-image {
+    position: absolute;
+    bottom: 10%;
+    width: 60px;
+    height: auto;
+  }
+  
+  .loader-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    z-index: 10;
+  }
+  
+  .loader {
+    width: 70px;
+    height: 70px;
+    animation: spin 3s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  

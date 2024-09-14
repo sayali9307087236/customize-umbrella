@@ -1,38 +1,411 @@
-.App {
+
+
+
+
+/* 
+.app-container {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: background-color 0.3s ease; 
+
+}
+
+.app-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+
+.color-options {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 20px 0;
 }
 
-.App-link {
-  color: #61dafb;
+.color-btn {
+  border: none;
+  padding: 15px;
+  margin: 0 5px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  outline: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.color-btn.active {
+  border: 2px solid #333;
 }
+
+
+.dropzone-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 50%;
+}
+
+.upload-tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  padding: 20px;
+  width: 100%;
+  max-width: 300px;
+  height: 80px;
+  cursor: pointer;
+  text-align: center;
+  position: relative; 
+}
+
+.upload-icon {
+  margin-right: 10px;
+  font-size: 24px;
+}
+
+.upload-tile p {
+  margin: 0;
+  font-weight: bold;
+}
+
+
+.loader {
+  width: 70px;
+  height: 70px;
+ 
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.umbrella-preview {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.umbrella-image {
+  width: 300px;
+  height: auto;
+}
+
+.logo-image {
+  position: absolute;
+  bottom: 10%;
+  width: 80px;
+  height: auto;
+}
+
+.loader-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  z-index: 10; 
+} */
+
+
+
+
+
+
+
+/* src/styles/App.css */
+
+/* .app-container {
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background-color 0.3s ease; 
+}
+
+
+.app-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+
+
+
+.dropzone-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 50%; 
+}
+
+.upload-tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 300px;
+  height: 80px;
+  cursor: pointer;
+  text-align: center;
+  position: relative; 
+}
+
+.upload-icon {
+  margin-right: 10px;
+  font-size: 24px;
+}
+
+.upload-tile p {
+  margin: 0;
+  font-weight: bold;
+}
+
+
+.loader {
+  width: 70px;
+  height: 70px;
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.umbrella-preview {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.umbrella-image {
+  width: 300px;
+  height: auto;
+}
+
+.logo-image {
+  position: absolute;
+  bottom: 10%;
+  width: 80px;
+  height: auto;
+}
+
+.loader-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  z-index: 10; 
+}
+
+
+
+
+
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+ .app-container {
+  min-height: 100vh;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  transition: background-color 3s ease;
+}
+
+.app-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.blue { 
+  background-color: #ADD8E6;
+  
+}
+
+.pink {
+  background-color: #FFB6C1;
+}
+
+.yellow {
+  background-color: #FFFFC5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Ensure the body and html elements take up full height */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* App container should take up full viewport height */
+.app-container {
+  min-height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center;
+  padding: 20px;
+  transition: background-color 3s ease; /* Smooth background color transition */
+}
+
+.app-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  line-height: 1.2; /* Ensures title doesn't take unnecessary space */
+}
+
+/* Fix the height of the color picker section to prevent shifting */
+.color-options {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  height: 100px; /* Fixed height to prevent jumping */
+}
+
+.color-btn {
+  border: none;
+  padding: 15px;
+  margin: 0 5px;
+  border-radius: 50%; /* Makes the buttons circular */
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  outline: none;
+}
+
+.color-btn.active {
+  border: 2px solid #333; /* Highlight active button */
+}
+
+/* Dropzone container should also have a fixed height */
+.dropzone-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  width: 250px;
+  border: 2px dashed #0b0909;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border 0.3s ease;
+  margin-top: 20px; /* Ensure consistent space between elements */
+}
+
+.dropzone-container:hover {
+  border-color: #333;
+}
+
+.upload-tile {
+  text-align: center;
+  padding: 20px;
+}
+
+.upload-icon {
+  font-size: 40px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.upload-tile p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Umbrella preview styling */
+.umbrella-preview {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px; /* Set a fixed minimum height */
+  width: 300px;
+  margin-top: -7px;
+}
+
+.umbrella-image {
+  width: 100%;
+  height: auto;
+}
+
+.logo-image {
+  position: absolute;
+  bottom: 20%;
+  width: 80px;
+  height: auto;
+}
+
+.loader-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.loader {
+  width: 70px;
+  height: 70px;
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.blue { /* Specific background colors for different classes */
+  background-color: #ADD8E6;
+}
+
+.pink {
+  background-color: #FFB6C1;
+}
+
+.yellow {
+  background-color: #FFFFC5;
+}
+
+
